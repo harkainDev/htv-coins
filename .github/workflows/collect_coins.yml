@@ -1,7 +1,7 @@
 name: Collect HTV coins
 on:
     schedule:
-      - cron: "5 */3 * * *"
+      - cron: "12 */3 * * *"
     workflow_dispatch:
 
 env:
