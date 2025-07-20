@@ -2,6 +2,7 @@ name: Collect HTV coins
 on:
     schedule:
       - cron: "0 */3 * * *"
+      timeout-minutes: 1
     workflow_dispatch:
 
 env:
@@ -20,10 +21,6 @@ jobs:
          with:
             all_but_latest: true
             access_token: ${{ github.token }}
-       - name: Install Dependencies
-         run: |
-           sudo apt upgrade && sudo apt update
-           sudo apt install curl openssl jq
        - name: Collect Coins
          timeout-minutes: 1
          run: |
